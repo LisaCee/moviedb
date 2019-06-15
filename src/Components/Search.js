@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Jumbotron from "./Jumbotron";
 import Display from "./Display";
 
 class Search extends Component {
@@ -32,6 +33,7 @@ class Search extends Component {
                 <input name="searchYear" type="number" max="2019" min="1900" onChange={this.onChange}></input>
                 <button onClick={this.onClick}>Search</button>
                 </form>
+                <Jumbotron one={this.state.results} />
                 <Display movie={this.state.results}/>
             </div>
         )
