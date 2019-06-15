@@ -13,9 +13,8 @@ class Search extends Component {
     onClick = e => {
         e.preventDefault();
         let searchYear = this.state.searchYear;
-        console.log('SEARCH', searchYear)
-        let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=a27647a7e82396bb23e5e83b8a91aca2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=${searchYear}`
-        fetch(baseURL) 
+        let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=a27647a7e82396bb23e5e83b8a91aca2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_original_language=en&primary_release_year=`
+        fetch(baseURL + searchYear) 
         .then(response => {
             return response.json();
         })
