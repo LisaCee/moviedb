@@ -7,6 +7,7 @@ const Display = props => {
             {props.movie.results && props.movie.results.map((movie, id) => {
                 return (
                     <div key={id}>
+                        <p></p>
                         <h1 key={id}>{movie.title}</h1>
                         <img src="{movie.poster_path}" alt="movie poster"/>
                     </div>
