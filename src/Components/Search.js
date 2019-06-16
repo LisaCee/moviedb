@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Jumbotron from "./Jumbotron";
+import Jumbo from "./Jumbo";
 import Display from "./Display";
 
 class Search extends Component {
@@ -9,7 +9,7 @@ class Search extends Component {
     }
     onChange = e => {
         this.setState({[e.target.name]: e.target.value});
-        console.log(this.state)
+        // console.log(this.state)
     }
     onClick = e => {
         e.preventDefault();
@@ -20,7 +20,8 @@ class Search extends Component {
             return response.json();
         })
         .then(data => {
-            this.setState({results: data})
+            this.setState({results: data});
+            // this.setState({searchYear: ""});
         })
         .catch(error => {
             console.log("ERROR", error);
@@ -33,8 +34,8 @@ class Search extends Component {
                 <input name="searchYear" type="number" max="2019" min="1900" onChange={this.onChange}></input>
                 <button onClick={this.onClick}>Search</button>
                 </form>
-                <Jumbotron one={this.state.results} />
-                <Display movie={this.state.results}/>
+                <Jumbo one={this.state.results} year={this.state.searchYear}/>
+                <Display movie={this.state.results} />
             </div>
         )
     }

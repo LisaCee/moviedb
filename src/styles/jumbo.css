@@ -1,0 +1,17 @@
+.jumbotron{
+    position: relative;
+    color: red;
+    top: 0;
+    left: 0;
+    width: 100%;
+};
+
+div.movie_year {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(110, 30, 30);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
