@@ -15,14 +15,13 @@ const Display = props => {
                 <Row>
                     {props.movie.results && others.map((movie, id) => {
                         let movie_poster = movie.poster_path.toString();
-                        let imageURL = "https://image.tmdb.org/t/p/w500" + movie_poster;
+                        let imageURL = "https://image.tmdb.org/t/p/w342" + movie_poster;
                         return (
-                            <Col sm={10} lg={6} key={id}>
-
-                                <h1 key={id}>{movie.title}</h1>
-
-                                <img src={imageURL} className="img-fluid" alt="movie poster" />
-
+                            <Col sm={{ span: 10, offset: 1 }} md={{span: 6, offset: 0}} key={id}>
+                                <div className="movie">
+                                    <img src={imageURL} className="img-fluid poster" alt="movie poster" />
+                                    <h1 id="movie_titles" key={id}>{movie.title}</h1>
+                                </div>
                             </Col>
                         )
                     })}

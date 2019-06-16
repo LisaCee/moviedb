@@ -1,0 +1,21 @@
+.movie {
+    background-color: rgb(34, 33, 33, .2);
+}
+
+#movie_titles {
+    color: goldenrod;
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 1% auto 5% auto;
+    min-height: 60px;
+
+}
+
+.poster {
+    margin-top: 5%;
+}
+
+.col-md-5 {
+    border: 1px solid red;
+}

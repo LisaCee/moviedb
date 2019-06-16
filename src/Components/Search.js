@@ -10,12 +10,12 @@ class Search extends Component {
     }
     onChange = e => {
         this.setState({[e.target.name]: e.target.value});
-        // console.log(this.state)
     }
     onClick = e => {
         e.preventDefault();
+        let api_key = process.env.REACT_APP_APIKEY;
         let searchYear = this.state.searchYear;
-        let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=a27647a7e82396bb23e5e83b8a91aca2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_original_language=en&primary_release_year=`
+        let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_original_language=en&primary_release_year=`
         fetch(baseURL + searchYear) 
         .then(response => {
             return response.json();

@@ -1,3 +1,10 @@
 body {
+  padding: 3%;
   background-color: rgb(71, 71, 71);
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  color: goldenrod;
 }

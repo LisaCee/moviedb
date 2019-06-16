@@ -5,7 +5,7 @@ import Search from "./Components/Search";
 function App() {
   return (
     <div className="App">
-      <h1>Top Movies by Year</h1>
+      <h1>Movie Time Machine</h1>
       <Search />
     </div>
   );
