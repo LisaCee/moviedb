@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Jumbo from "./Jumbo";
 import Display from "./Display";
+import "../styles/search.css";
 
 class Search extends Component {
     state = {
@@ -21,7 +22,6 @@ class Search extends Component {
         })
         .then(data => {
             this.setState({results: data});
-            // this.setState({searchYear: ""});
         })
         .catch(error => {
             console.log("ERROR", error);
@@ -29,7 +29,7 @@ class Search extends Component {
     }
     render() {
         return (
-            <div>
+            <div id="search_form">
                 <form>
                 <input name="searchYear" type="number" max="2019" min="1900" onChange={this.onChange}></input>
                 <button onClick={this.onClick}>Search</button>

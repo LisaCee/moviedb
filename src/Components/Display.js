@@ -1,25 +1,35 @@
 import React from 'react';
+import "../styles/display.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 const Display = props => {
     let others;
     if (props.movie.results) {
         others = props.movie.results.slice(1);
     }
-    
-    return (
-        <div>
-            {props.movie.results && others.map((movie, id) => {
-                let movie_poster = movie.poster_path.toString();
-                let imageURL = "https://image.tmdb.org/t/p/w500" + movie_poster;
-                return (
-                    <div key={id}>
-                        <h1 key={id}>{movie.title}</h1>
 
-                        <img src={imageURL} alt="movie poster" />
-                    </div>
-                )
-            })}
+    return (
+
+        <div>
+            <Container>
+                <Row>
+                    {props.movie.results && others.map((movie, id) => {
+                        let movie_poster = movie.poster_path.toString();
+                        let imageURL = "https://image.tmdb.org/t/p/w500" + movie_poster;
+                        return (
+                            <Col sm={10} lg={6} key={id}>
+
+                                <h1 key={id}>{movie.title}</h1>
+
+                                <img src={imageURL} className="img-fluid" alt="movie poster" />
+
+                            </Col>
+                        )
+                    })}
+                </Row>
+            </Container>
         </div>
+
     )
 
 }
