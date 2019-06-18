@@ -1,0 +1,64 @@
+import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+
+class Splash extends Component {
+  state = {
+    results: {}
+  };
+
+  componentDidMount() {
+    fetch(
+      "https://api.themoviedb.org/3/discover/movie?api_key=a27647a7e82396bb23e5e83b8a91aca2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_original_language=en&?sort_by=popularity.desc"
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        this.setState({ results: data });
+      })
+      .catch(error => {
+        console.log("ERROR", error);
+      });
+  }
+
+  render() {
+    return (
+      <div>
+        <Container>
+          <Row>
+            <h3>Now Showing</h3>
+          </Row>
+          <Row>
+            {this.state.results.results
+              ? this.state.results.results.map((movie, id) => {
+                  let movie_poster = movie.poster_path.toString();
+                  let imageURL =
+                    "https://image.tmdb.org/t/p/w342" + movie_poster;
+                  return (
+                    <Col
+                      sm={{ span: 10, offset: 1 }}
+                      md={{ span: 6, offset: 0 }}
+                      key={id}
+                    >
+                      <div className="movie">
+                        <img
+                          src={imageURL}
+                          className="img-fluid poster"
+                          alt="movie poster"
+                        />
+                        <h1 id="movie_titles" key={id}>
+                          {movie.title}
+                        </h1>
+                      </div>
+                    </Col>
+                  );
+                })
+              : null}
+          </Row>
+        </Container>
+      </div>
+    );
+  }
+}
+
+export default Splash;
