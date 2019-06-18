@@ -9,6 +9,7 @@
     font-weight: bold;
     margin: 1% auto 5% auto;
     min-height: 60px;
+    text-transform: uppercase;
   }
   
   .poster {
@@ -19,6 +20,7 @@
     margin: 0 auto;
     color: white;
     padding: 3%;
+    text-transform: uppercase;
   }
   
   /* .movie_results {
