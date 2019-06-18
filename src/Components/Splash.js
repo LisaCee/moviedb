@@ -26,7 +26,7 @@ class Splash extends Component {
       <div>
         <Container>
           <Row>
-            <h3>Now Showing</h3>
+            <h2>Now Showing</h2>
           </Row>
           <Row>
             {this.state.results.results
