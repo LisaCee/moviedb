@@ -1,14 +1,17 @@
 body {
   padding: 3%;
   background-color: #a2a9b3;
-
+  background: rgb(21,21,22);
+background: linear-gradient(197deg, rgba(21,21,22,1) 0%, rgba(213,213,214,0.9976365546218487) 46%, rgba(20,2,82,1) 100%);
 }
 
 h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 4rem;
-  color: rgb(240, 93, 9);
-  text-shadow: 2px 2px #999999;
+  color: rgb(240, 205, 9);
+  text-shadow: 2px 2px rgb(117, 117, 117);
 }
 
-
+h4, h6 {
+  color: rgb(240, 205, 9);
+}
