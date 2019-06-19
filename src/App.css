@@ -1,11 +1,7 @@
 body {
   padding: 3%;
-  background-color: #c0c8d3;
-  /* background-position: center;
-  background-repeat: repeat;
-  background-size: cover;
-  height: 100%;
-  background-image: url("https://images.unsplash.com/photo-1433024730544-5f8e3e2cc6c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"); */
+  background-color: #a2a9b3;
+
 }
 
 h1 {
@@ -14,3 +10,5 @@ h1 {
   color: rgb(240, 93, 9);
   text-shadow: 2px 2px #999999;
 }
+
+
