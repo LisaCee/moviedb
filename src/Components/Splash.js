@@ -25,6 +25,7 @@ class Splash extends Component {
     return (
       <div>
         <Container>
+         <div className="movie_results">
           <Row>
             <h2>Now Showing</h2>
           </Row>
@@ -55,6 +56,7 @@ class Splash extends Component {
                 })
               : null}
           </Row>
+          </div>
         </Container>
       </div>
     );

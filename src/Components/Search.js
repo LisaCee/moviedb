@@ -6,7 +6,8 @@ import "../styles/search.css";
 class Search extends Component {
   state = {
     searchYear: "",
-    results: {}
+    results: {},
+    searchYearProp: ""
   };
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -22,6 +23,8 @@ class Search extends Component {
       })
       .then(data => {
         this.setState({ results: data });
+        this.setState({ searchYearProp: searchYear });
+        this.setState({ searchYear: "" });
       })
       .catch(error => {
         console.log("ERROR", error);
@@ -37,6 +40,7 @@ class Search extends Component {
               type="number"
               max="2019"
               min="1900"
+              value={this.state.searchYear}
               onChange={this.onChange}
             />
             <button onClick={this.onClick}>
@@ -45,7 +49,7 @@ class Search extends Component {
           </form>
         </div>
 
-        <Jumbo one={this.state.results} year={this.state.searchYear} />
+        <Jumbo one={this.state.results} year={this.state.searchYearProp} />
         <Display movie={this.state.results} />
 
         <footer>

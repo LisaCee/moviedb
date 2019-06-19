@@ -1,11 +1,16 @@
 body {
   padding: 3%;
-  background-color: rgb(71, 71, 71);
+  background-color: #c0c8d3;
+  /* background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1433024730544-5f8e3e2cc6c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"); */
 }
 
 h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 4rem;
-  color: goldenrod;
-  text-shadow: 2px 2px black;
+  color: rgb(240, 93, 9);
+  text-shadow: 2px 2px #999999;
 }
