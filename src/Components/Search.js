@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Jumbo from "./Jumbo";
 import Display from "./Display";
+import Header from "./Header";
 import "../styles/search.css";
 
 class Search extends Component {
@@ -51,7 +52,7 @@ class Search extends Component {
             </button>
           </form>
         </div>
-
+        <Header />
         <Jumbo one={this.state.results} year={this.state.searchYearProp} />
         <Display movie={this.state.results} year={this.state.searchYearProp} click={this.onClick}/>
 

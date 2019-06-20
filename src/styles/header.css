@@ -1,0 +1,16 @@
+.bg-light {
+  background-color: grey !important;
+}
+a.navbar-brand {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.25rem;
+  color: #f0ac09 !important;
+  text-shadow: 3px 2px #555555;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    a.navbar-brand {
+        font-size: 3rem;
+    }
+}
