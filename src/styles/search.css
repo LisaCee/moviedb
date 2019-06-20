@@ -6,7 +6,7 @@ form {
   margin: 0 auto;
 }
 input {
-  width: 30%;
+  width: 40%;
   max-height: 35px;
   border-radius: 10px 10px 10px 10px;
   border: none;
@@ -14,13 +14,17 @@ input {
   padding: 25px;
 }
 button {
-  background-color: rgb(240, 205, 9);
+  background-color: #f0ac09;
   border: none;
   height: 50px;
   width: 50px;
   border-radius: 10px 10px 10px 10px;
 }
-
+button:hover {
+  background-color: black;
+  color: #f0ac09;
+  border: 1px solid;
+}
 footer img {
   margin-top: 3%;
   height: 50px;

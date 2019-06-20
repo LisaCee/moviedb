@@ -29,3 +29,8 @@ div.movie_results {
   margin: 0 -1%;
   box-shadow: 5px 5px 2px black;
 }
+@media print {
+  #movie_titles, h2 {
+    color: black;
+  }
+}
