@@ -29,3 +29,13 @@ footer img {
   margin-top: 3%;
   height: 50px;
 }
+p {
+  color: white;
+}
+p a {
+  color: #01d277;
+}
+
+p a:visited {
+  color: #01d277;
+}

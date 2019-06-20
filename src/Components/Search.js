@@ -7,7 +7,7 @@ class Search extends Component {
   state = {
     searchYear: "",
     results: {},
-    searchYearProp: ""
+    searchYearProp: "",
   };
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -16,7 +16,8 @@ class Search extends Component {
     e.preventDefault();
     let api_key = process.env.REACT_APP_APIKEY;
     let searchYear = this.state.searchYear;
-    let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_original_language=en&primary_release_year=`;
+    let pageNumber = 1;
+    let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_original_language=en&primary_release_year=`;
     fetch(baseURL + searchYear)
       .then(response => {
         return response.json();
@@ -29,6 +30,8 @@ class Search extends Component {
       .catch(error => {
         console.log("ERROR", error);
       });
+      pageNumber += 1;
+      console.log(pageNumber)
   };
   render() {
     return (
@@ -50,7 +53,7 @@ class Search extends Component {
         </div>
 
         <Jumbo one={this.state.results} year={this.state.searchYearProp} />
-        <Display movie={this.state.results} />
+        <Display movie={this.state.results} year={this.state.searchYearProp} click={this.onClick}/>
 
         <footer>
           <a href="https://www.themoviedb.org" target="_">
@@ -59,6 +62,7 @@ class Search extends Component {
               alt="Powered by the Movie Database"
             />
           </a>
+          <p>Designed by <a href="http://www.lisaceedesign.com">LisaCeeDesign</a></p>
         </footer>
       </div>
     );
