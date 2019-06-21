@@ -1,5 +1,6 @@
 .bg-light {
   background-color: grey !important;
+  opacity: .5 !important;
 }
 a.navbar-brand {
   font-family: "Orbitron", sans-serif;
@@ -13,4 +14,8 @@ a.navbar-brand {
     a.navbar-brand {
         font-size: 3rem;
     }
+}
+.row {
+  border: 1px solid red;
+  min-width: 100%;
 }
