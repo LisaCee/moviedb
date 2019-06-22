@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import { Navbar, Nav, Form, FormControl, Button, Container, Row, Col } from 'react-bootstrap'
 import "../styles/header.css";
+// import Splash from "./Splash"
+import Display from "./Display";
 import Jumbo from "./Jumbo";
-import Splash from "./Splash"
 
 class HeaderSearch extends Component {
     state = {
@@ -40,6 +41,7 @@ class HeaderSearch extends Component {
             <Container className="fixed-top">
                 <Navbar bg="dark" expand="lg">
                     <Row>
+                    <Row>
                         <Col>
                             <Navbar.Brand href="#home">Movie Time Machine</Navbar.Brand>
 
@@ -47,6 +49,7 @@ class HeaderSearch extends Component {
                         </Col>
                     </Row>
                     <Row>
+                        <Col>
                         <div id="search_form">
                             <form>
                                 <input
@@ -62,14 +65,17 @@ class HeaderSearch extends Component {
                                 </button>
                             </form>
                         </div>
+                        </Col>
                         {/* <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                             <Button variant="outline-success">Search</Button>
                         </Form> */}
                     </Row>
+                    </Row>
                 </Navbar>
             </Container >
-            <Splash />
+            <Jumbo one={this.state.results} year={this.state.searchYearProp} />
+        <Display movie={this.state.results} year={this.state.searchYearProp} click={this.onClick}/>
         </div >
     )
                     }

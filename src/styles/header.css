@@ -16,6 +16,7 @@ a.navbar-brand {
     }
 }
 .row {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   min-width: 100%;
+  margin: 0 auto;
 }
