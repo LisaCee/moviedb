@@ -54,7 +54,7 @@ onClick = e => {
                 <Col
                   sm={{ span: 10, offset: 1 }}
                   md={{ span: 6, offset: 0 }}
-                  lg="4"
+                  lg={{span: 4, offset: 0}}
                   key={id}
                 >
                   <div className="movie">

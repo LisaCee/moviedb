@@ -1,3 +1,6 @@
+.App {
+  text-align: center;
+}
 .bg-light {
   background-color: grey !important;
   opacity: .5 !important;
@@ -9,19 +12,9 @@ a.navbar-brand {
   text-shadow: 3px 2px #555555;
   margin: 0 auto;
 }
-
-@media (min-width: 768px) {
-    a.navbar-brand {
-        font-size: 3rem;
-    }
-}
 .row {
-  /* border: 1px solid red; */
   min-width: 100%;
   margin: 0 auto;
-}
-.App {
-  text-align: center;
 }
 form {
   padding: 3%;
@@ -60,4 +53,9 @@ p a {
 
 p a:visited {
   color: #01d277;
+}
+@media (min-width: 768px) {
+    a.navbar-brand {
+        font-size: 3rem;
+    }
 }

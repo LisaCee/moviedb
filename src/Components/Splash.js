@@ -39,6 +39,7 @@ class Splash extends Component {
                     <Col
                       sm={{ span: 10, offset: 1 }}
                       md={{ span: 6, offset: 0 }}
+                      lg={{span: 4, offset: 0}}
                       key={id}
                     >
                       <div className="movie">
