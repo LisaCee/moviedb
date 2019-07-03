@@ -3,6 +3,7 @@ import { Navbar, Container, Row, Col } from 'react-bootstrap'
 import "../styles/header.css";
 import Display from "./Display";
 import Jumbo from "./Jumbo";
+import moment from "moment";
 
 class HeaderSearch extends Component {
     state = {
@@ -26,6 +27,7 @@ class HeaderSearch extends Component {
                 return response.json();
             })
             .then(data => {
+                if (!data) {console.log('THIS')}
                 this.setState({ results: data });
                 this.setState({ searchYearProp: searchYear });
                 this.setState({ searchYear: "" });
@@ -37,6 +39,8 @@ class HeaderSearch extends Component {
         console.log(pageNumber)
     };
     render() {
+        let now = moment(new Date()).format('YYYY');
+        let maxYear = parseInt(now) + 5;
         return (
             <div>
                 <Container>
@@ -56,7 +60,7 @@ class HeaderSearch extends Component {
                                             <input
                                                 name="searchYear"
                                                 type="number"
-                                                max="2019"
+                                                max={maxYear}
                                                 min="1900"
                                                 value={this.state.searchYear}
                                                 onChange={this.onChange}
