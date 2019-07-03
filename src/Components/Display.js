@@ -12,27 +12,27 @@ class Display extends Component {
     }
   }
 
-onClick = e => {
-  e.preventDefault();
-  let api_key = process.env.REACT_APP_APIKEY;
-  let searchYear = this.props.year;
-  let pageNumber = 2;
-  let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_original_language=en&primary_release_year=`;
-  fetch(baseURL + searchYear)
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log('DATA',data)
-      this.setState({ results: data });
-      this.setState({ searchYearProp: searchYear });
-      this.setState({ searchYear: "" });
-    })
-    .catch(error => {
-      console.log("ERROR", error);
-    });
-    pageNumber += 1;
-  }
+// onClick = e => {
+//   e.preventDefault();
+//   let api_key = process.env.REACT_APP_APIKEY;
+//   let searchYear = this.props.year;
+//   let pageNumber = 2;
+//   let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_original_language=en&primary_release_year=`;
+//   fetch(baseURL + searchYear)
+//     .then(response => {
+//       return response.json();
+//     })
+//     .then(data => {
+//       console.log('DATA',data)
+//       this.setState({ results: data });
+//       this.setState({ searchYearProp: searchYear });
+//       this.setState({ searchYear: "" });
+//     })
+//     .catch(error => {
+//       console.log("ERROR", error);
+//     });
+//     pageNumber += 1;
+//   }
 
   render() {
     console.log(this.props)

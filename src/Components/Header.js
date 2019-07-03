@@ -3,23 +3,23 @@ import { Navbar, Container, Row, Col } from 'react-bootstrap'
 import "../styles/header.css";
 import Display from "./Display";
 import Jumbo from "./Jumbo";
-import Popup from "./Popup";
+// import Popup from "./Popup";
 
 class HeaderSearch extends Component {
     state = {
         searchYear: "",
         results: {},
         searchYearProp: "",
-        showPopup: false
+        // showPopup: false
     };
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
     };
-    togglePopup() {
-        this.setState({
-          showPopup: !this.state.showPopup
-        });
-    }
+    // togglePopup() {
+    //     this.setState({
+    //       showPopup: !this.state.showPopup
+    //     });
+    // }
     onClick = e => {
         e.preventDefault();
         let api_key = process.env.REACT_APP_APIKEY;
