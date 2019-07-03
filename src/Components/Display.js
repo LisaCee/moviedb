@@ -79,7 +79,7 @@ class Display extends Component {
                 </Col>
               );
             })}
-            <button onClick={this.onClick}>Want More?</button>
+            {/* <button onClick={this.onClick}>Want More?</button> */}
         </Row>
       </div>
     </Container>

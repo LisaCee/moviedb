@@ -24,11 +24,11 @@ class HeaderSearch extends Component {
         e.preventDefault();
         let api_key = process.env.REACT_APP_APIKEY;
         let searchYear = this.state.searchYear;
-        if (searchYear.length !== 4) {
-            alert('4-digit')
-            this.setState({searchYear: ""});
-            return;
-        }
+        // if (searchYear.length !== 4) {
+        //     alert('4-digit')
+        //     this.setState({searchYear: ""});
+        //     return;
+        // }
         let pageNumber = 1;
         let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_original_language=en&primary_release_year=`;
         fetch(baseURL + searchYear)
@@ -63,7 +63,7 @@ class HeaderSearch extends Component {
                             <Row>
                                 <Col>
                                     <div id="search_form">
-                                        <form>
+                                        <form onSubmit={this.onClick}>
                                             <input
                                                 name="searchYear"
                                                 type="number"
@@ -71,8 +71,9 @@ class HeaderSearch extends Component {
                                                 min="1900"
                                                 value={this.state.searchYear}
                                                 onChange={this.onChange}
+                                                required
                                             />
-                                            <button onClick={this.onClick}>
+                                            <button type = "submit">
                                                 <i className="fas fa-search" />
                                             </button>
                                         </form>
