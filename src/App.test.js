@@ -15,13 +15,13 @@ it('renders without crashing', () => {
 });
 
 describe('moviedb api server', () => {
-  test("should get a response from GET", () => {
+  test("should receive a response from GET", () => {
     const response = request(baseURL, searchYear).get("/");
     expect(response.status).toBeTruthy;
   })
   test("should return an object from GET", () => {
-    const response = request(baseURL).get("/");
-    console.log(typeof(response))
+    const response = request(baseURL, searchYear).get("/");
     expect(typeof(response)).toBe("object")
   })
+  
 })

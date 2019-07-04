@@ -24,11 +24,9 @@ class HeaderSearch extends Component {
         let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_original_language=en&primary_release_year=`;
         fetch(baseURL + searchYear)
             .then(response => {
-                console.log('RES',response)
                 return response.json();
             })
             .then(data => {
-                if (!data) {console.log('THIS')}
                 this.setState({ results: data });
                 this.setState({ searchYearProp: searchYear });
                 this.setState({ searchYear: "" });
@@ -78,7 +76,7 @@ class HeaderSearch extends Component {
                     </Navbar>
                 </Container >
                 <Jumbo one={this.state.results} year={this.state.searchYearProp} />
-                <Display movie={this.state.results} year={this.state.searchYearProp} click={this.onClick} />
+                <Display movie={this.state.results} year={this.state.searchYearProp} />
                 <footer>
                     <a href="https://www.themoviedb.org" target="_">
                         <img
