@@ -36,7 +36,7 @@ class HeaderSearch extends Component {
                 console.log("ERROR", error);
             });
         pageNumber += 1;
-        console.log(pageNumber)
+        // console.log(pageNumber)
     };
     render() {
         let now = moment(new Date()).format('YYYY');

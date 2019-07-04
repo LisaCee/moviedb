@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import "../styles/display.css";
 import { Container, Row, Col } from "react-bootstrap";
-import moment from "moment";
 
 class Display extends Component {
   constructor(props) {
@@ -43,13 +42,7 @@ class Display extends Component {
     if (this.props.movie.results) {
       others = this.props.movie.results.slice(1);
     }
-    let currentYear = parseInt(moment(new Date()).format('YYYY'));
-    console.log(this.props.year)
-    if (this.props.year > currentYear) {
-      return (
-        <h1>Hi</h1>
-      )
-    }
+    
   return (
     <Container>
       <div className="movie_results">
