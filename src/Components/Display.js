@@ -35,7 +35,6 @@ class Display extends Component {
 //   }
 
   render() {
-    console.log(this.props)
     let others;
     let defaultPosterURL =
       "https://images.unsplash.com/photo-1545129139-1beb780cf337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80";

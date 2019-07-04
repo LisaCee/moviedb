@@ -4,7 +4,6 @@ import Splash from "./Splash";
 import moment from "moment";
 
 const Jumbo = props => {
-  console.log('JUMBO', props)
   let imageURL;
   let defaultPosterURL =
     "https://images.unsplash.com/photo-1507924538820-ede94a04019d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
@@ -13,7 +12,6 @@ const Jumbo = props => {
     imageURL = "https://image.tmdb.org/t/p/w1280" + backdropImg;
   }
   let currentYear = parseInt(moment(new Date()).format('YYYY'));
-    console.log(props.year)
     if (props.year > currentYear) {
       return (
         <div className="container">
