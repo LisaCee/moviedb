@@ -10,6 +10,7 @@ class HeaderSearch extends Component {
         searchYear: "",
         results: {},
         searchYearProp: "",
+        pageNumber: 1
 
     };
     onChange = e => {
@@ -18,10 +19,12 @@ class HeaderSearch extends Component {
 
     onClick = e => {
         e.preventDefault();
+        console.log('CLICK')
         let api_key = process.env.REACT_APP_APIKEY;
+        let pageNumber = this.state.pageNumber;
         let searchYear = this.state.searchYear;
-        let pageNumber = 1;
         let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_original_language=en&primary_release_year=`;
+        console.log('HEAD PAGE', baseURL)
         fetch(baseURL + searchYear)
             .then(response => {
                 return response.json();
@@ -30,12 +33,12 @@ class HeaderSearch extends Component {
                 this.setState({ results: data });
                 this.setState({ searchYearProp: searchYear });
                 this.setState({ searchYear: "" });
+                this.setState({pageNumber: pageNumber + 1})
+                console.log(this.state)
             })
             .catch(error => {
                 console.log("ERROR", error);
             });
-        pageNumber += 1;
-        // console.log(pageNumber)
     };
     render() {
         let now = moment(new Date()).format('YYYY');
@@ -76,7 +79,7 @@ class HeaderSearch extends Component {
                     </Navbar>
                 </Container >
                 <Jumbo one={this.state.results} year={this.state.searchYearProp} />
-                <Display movie={this.state.results} year={this.state.searchYearProp} />
+                <Display movie={this.state.results} year={this.state.searchYearProp} page={this.state.pageNumber} click={this.onClick}/>
                 <footer>
                     <a href="https://www.themoviedb.org" target="_">
                         <img

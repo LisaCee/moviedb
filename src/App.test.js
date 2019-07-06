@@ -19,6 +19,10 @@ describe('moviedb api server', () => {
     const response = request(baseURL, searchYear).get("/");
     expect(response.status).toBeTruthy;
   })
+  test("should receive a response method of GET", () => {
+    const response = request(baseURL, searchYear).get("/");
+    expect(response.method).toBe("GET");
+  })
   test("should return an object from GET", () => {
     const response = request(baseURL, searchYear).get("/");
     expect(typeof(response)).toBe("object")
