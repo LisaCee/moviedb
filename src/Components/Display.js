@@ -33,12 +33,12 @@ const Display = props => {
                         alt="movie poster"
                       />
                     ) : (
-                      <img
-                        src={imageURL}
-                        className="img-fluid poster"
-                        alt="movie poster"
-                      />
-                    )}
+                        <img
+                          src={imageURL}
+                          className="img-fluid poster"
+                          alt="movie poster"
+                        />
+                      )}
 
                     <h1 id="movie_titles" key={id}>
                       {movie.title}
@@ -48,6 +48,7 @@ const Display = props => {
               );
             })}
         </Row>
+        <button onClick={props.click}>Want More?</button>
       </div>
     </Container>
   );
