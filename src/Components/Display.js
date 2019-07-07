@@ -3,6 +3,7 @@ import "../styles/display.css";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Display = props => {
+  console.log('PROPS',props)
   let others;
   let defaultPosterURL =
     "https://images.unsplash.com/photo-1545129139-1beb780cf337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80";
@@ -47,8 +48,10 @@ const Display = props => {
                 </Col>
               );
             })}
+          {props.page === 1 ? null : ( <button onClick={props.click} id="moreButton"><i className="far fa-arrow-alt-circle-right fa-2x"></i></button>
+)}
+         
         </Row>
-        <button onClick={props.click}>Want More?</button>
       </div>
     </Container>
   );

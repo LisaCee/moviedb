@@ -33,11 +33,12 @@ class HeaderSearch extends Component {
                 this.setState({ results: data });
                 this.setState({ searchYearProp: searchYear });
                 // this.setState({ searchYear: "" });
-                this.setState({pageNumber: pageNumber + 1});
+                this.setState({ pageNumber: pageNumber + 1 });
             })
             .catch(error => {
                 console.log("ERROR", error);
             });
+        window.scrollTo(0, 0);
     };
     render() {
         let now = moment(new Date()).format('YYYY');
@@ -67,7 +68,7 @@ class HeaderSearch extends Component {
                                                 onChange={this.onChange}
                                                 required
                                             />
-                                            <button type = "submit">
+                                            <button type="submit">
                                                 <i className="fas fa-search" />
                                             </button>
                                         </form>
@@ -78,7 +79,7 @@ class HeaderSearch extends Component {
                     </Navbar>
                 </Container >
                 <Jumbo one={this.state.results} year={this.state.searchYearProp} />
-                <Display movie={this.state.results} year={this.state.searchYearProp} page={this.state.pageNumber} click={this.onClick}/>
+                <Display movie={this.state.results} year={this.state.searchYearProp} page={this.state.pageNumber} click={this.onClick} />
                 <footer>
                     <a href="https://www.themoviedb.org" target="_">
                         <img
