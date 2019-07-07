@@ -32,7 +32,7 @@ class HeaderSearch extends Component {
             .then(data => {
                 this.setState({ results: data });
                 this.setState({ searchYearProp: searchYear });
-                this.setState({ searchYear: "" });
+                // this.setState({ searchYear: "" });
                 this.setState({pageNumber: pageNumber + 1});
             })
             .catch(error => {
