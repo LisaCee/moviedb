@@ -29,10 +29,16 @@ div.movie_results {
   box-shadow: 5px 5px 2px black;
 }
 #moreButton {
-  margin: 192px auto;
+  margin: 1rem auto;
 }
 @media print {
   #movie_titles, h2 {
     color: black;
+  }
+}
+@media (min-width: 768px) {
+  #moreButton {
+    margin: 192px auto;
+
   }
 }
