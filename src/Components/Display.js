@@ -48,8 +48,8 @@ const Display = props => {
                 </Col>
               );
             })}
-          {props.page === 1 ? null : ( <button onClick={props.click} id="moreButton"><i className="far fa-arrow-alt-circle-right fa-2x"></i></button>
-)}
+          {props.page === 1 ? null : props.movie.total_pages > props.page +1 ? ( <button onClick={props.click} id="moreButton"><i className="far fa-arrow-alt-circle-right fa-2x"></i></button>
+): null}
          
         </Row>
       </div>
