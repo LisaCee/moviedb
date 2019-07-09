@@ -15,7 +15,6 @@ class HeaderSearch extends Component {
     };
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
-        console.log(this.state)
     };
 
     onClick = e => {
