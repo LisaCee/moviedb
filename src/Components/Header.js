@@ -26,14 +26,17 @@ class HeaderSearch extends Component {
         let baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_original_language=en&primary_release_year=`;
         fetch(baseURL + searchYear)
             .then(response => {
-                console.log(baseURL + searchYear)
                 return response.json();
             })
             .then(data => {
+                if(searchYear === this.state.searchYear){
+                    this.setState({ pageNumber: pageNumber + 1 });
+                } else {
+                    this.setState({pageNumber: 1});
+                }
                 this.setState({ results: data });
                 this.setState({ searchYearProp: searchYear });
                 // this.setState({ searchYear: "" });
-                this.setState({ pageNumber: pageNumber + 1 });
             })
             .catch(error => {
                 console.log("ERROR", error);
